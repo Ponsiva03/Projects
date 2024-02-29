@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Loader</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="urlInput" placeholder="Enter URL here...">
+        <button onclick="loadUrl()">Load</button>
+        <button onclick="captureScreenshots()">Capture Screenshots</button> <!-- New button -->
+    </div>
+    <iframe id="websiteLoader" style="width: 100%; height: 600px;"></iframe>
+    <script>
+        function loadUrl() {
+            const urlInput = document.getElementById('urlInput').value;
+            const websiteLoader = document.getElementById('websiteLoader');
+
+            fetch('/load_url', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    'url': urlInput
+                }),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const pdfUrl = URL.createObjectURL(blob);
+                websiteLoader.src = pdfUrl; // Load the generated PDF in the iframe
+            })
+            .catch(error => console.error('Error:', error));
+        
+        }
+
+        function captureScreenshots() {
+            const urlInput = document.getElementById('urlInput');
+            fetch('/take_screenshot', {
+                method: 'POST',
+                body: new URLSearchParams({
+                    'url': urlInput.value
+                }),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data); // Show a message indicating success or failure
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>

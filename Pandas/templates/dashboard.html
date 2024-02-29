@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: azure;">
+    <h2> Welcome to the Dashboard</h2>
+    <form action="/insert_data" method="post">
+        <h3>Insert Data</h3>
+        Name: <input type="text" name="name"><br>
+        Details: <input type="text" name="details"><br>
+        <input type="submit" value="Submit Details">
+    </form>
+
+    <form action="/display_data" method="get">
+        <h3>Display Data</h3>
+        Name: <input type="text" name="name"><br>
+        <input type="submit" value="Display Details">
+    </form>
+
+    <form action="/savedata" method="get">
+        <h3>Show All Data</h3>
+        <input type="submit" value="Show All Data">
+    </form>
+</body>
+</html>

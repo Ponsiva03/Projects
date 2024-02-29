@@ -1,0 +1,66 @@
+Unnamed: 0,File Name,Grantor,Grantee,Grantor_Entities,Grantee_Entities
+0,3123296_687756.txt,"
+Grantor: GENESIS MASONRY, LLC","
+The Grantee is Rhea's Mill Baptist Church.","['GENESIS', 'LLC']",['Rhea']
+1,3123298_687761.txt," 
+
+The Grantor in this text is Joyce Dunn and William Dunn, a married couple.","  
+
+Answer: William Frank Dunn III and Joyce Lynn Dunn, Co-Trustees of the Dunn Revocable Trust","['Joyce Dunn', 'William Dunn']","['William Frank Dunn III', 'Joyce Lynn Dunn', 'Co-Trustees', 'the Dunn Revocable Trust']"
+2,3123303_687764.txt,"
+
+The Grantor in the text is D.R. Horton-Texas, Ltd., a Texas Limited Partnership.",The Grantee is Lilibet Del Carmen Cuenca Melendez and Jairo Jimenez Cuenca.,"['D.R. Horton-Texas, Ltd.', 'Texas Limited Partnership']","['Lilibet Del Carmen', 'Jairo Jimenez']"
+3,3123303_687766.txt,"
+The grantor in this text is D. R. Horton, Inc., a Delaware Corporation as Authorized Agent of D. R. Horton—Texas, Ltd., a Texas Limited Partnership.","
+The grantee in this text is D. R. Horton-Texas, Ltd., a Texas Limited Partnership.","['D. R. Horton, Inc.', 'a Delaware Corporation', 'D. R. Horton', 'Texas, Ltd.', 'Texas Limited Partnership']","['D. R. Horton-Texas, Ltd.', 'Texas Limited Partnership']"
+4,3123308_687775.txt,"
+Grantor: D.R. HORTON — TEXAS, LTD., A TEXAS LIMITED PARTNERSHIP","
+Grantee: Joshua Hunter Mohar and Caleb Royce Adley","['D.R. HORTON', 'TEXAS, LTD.', 'A TEXAS LIMITED PARTNERSHIP']","['Joshua Hunter Mohar', 'Caleb Royce Adley']"
+5,3123308_687777.txt,"
+Grantor: D. R. Horton-Texas, Ltd., a Texas Limited Partnership","
+Grantee: D. R. Horton-Texas, Ltd., a Texas Limited Partnership","['D. R. Horton-Texas, Ltd.', 'Texas Limited Partnership']","['D. R. Horton-Texas, Ltd.', 'Texas Limited Partnership']"
+6,3123310_687805.txt,"
+
+Answer: Partners in Building, L.P., a Texas limited partnership","
+Grantee: Terrence Bell, an unmarried individual",['L.P.'],['Terrence Bell']
+7,3123318_687768.txt,"
+
+Grantor: Christopher Rummel and wife, Natalie Rummel","
+Answer: Kevin Eugene Loveridge","['Christopher Rummel', 'Natalie Rummel']",['Kevin Eugene Loveridge']
+8,3123323_687965.txt,"
+
+Grantor: Thomas D. Halloran and Cynthia L. Halloran","
+Grantee: Thomas D. Halloran and Cynthia L. Halloran, Co-Trustees of the T & C Halloran Revocable Trust","['Thomas D. Halloran', 'Cynthia L. Halloran']","['Thomas D. Halloran', 'Cynthia L. Halloran', 'Co-Trustees']"
+9,3123330_687940.txt,"
+Grantor: Bruce S. Schlosberg and Karen Sehlosberg, husband and wife","
+Answer: Bruce Seymour Schlosberg and Karen Diann Schlosberg, as Co-Trustees of the Bruce and Karen Schlosberg Revocable Trust","['Bruce S. Schlosberg', 'Karen Sehlosberg']","['Bruce Seymour Schlosberg', 'Karen Diann Schlosberg', 'Co-Trustees', 'Bruce', 'Karen Schlosberg Revocable Trust']"
+10,3123339_688047.txt,"
+Grantor: Our Country Homes, LLC","
+Grantee: Raﬁk Hanna",[],['Raﬁk Hanna']
+11,3123343_688057.txt,"
+Answer: Bethel Murray IV and Kallie Murray","
+Answer: Gregory L Kennington and Keelee Kennington, a married couple","['Bethel Murray IV', 'Kallie Murray']","['Gregory L Kennington', 'Keelee Kennington']"
+12,3123387_688106.txt,"
+GRANTOR: BARRAIT LAKE ESTATES, LLC, a Texas limited liability company","
+Grantee: Marvin Bobo and Alyssa Bobo","['GRANTOR', 'LLC']","['Marvin Bobo', 'Alyssa Bobo']"
+13,3123392_688114.txt,"
+Answer: Arturo M. Ibarra","
+Answer: Ngun Ceu Lian and Khuang Iang",['Arturo M. Ibarra'],"['Ceu Lian', 'Khuang Iang']"
+14,3123398_688119.txt,"
+Grantor: Allison Louise Lantz and Mitchell Dorris Lantz","
+Ans: Grantee: Richard Harrington and Heather Rose Harrington, husband and wife","['Allison Louise Lantz', 'Mitchell Dorris Lantz']","['Richard Harrington', 'Heather Rose Harrington']"
+15,3123400_688133.txt,"
+
+Grantor: Janet Mary Terwey","
+Grantee: Janet Mary Terwey",['Janet Mary Terwey'],['Janet Mary Terwey']
+16,3123405_688137.txt,"
+The Grantor in this text is Ken C. Masingill (also known as Kenneth C. Masingill) and Shirley A. Snyder.","
+Grantee: Ken C. Masingill and Shirley A. Snyder, Co-Trustees of the K Masingill & S Snyder Revocable Trust","['Ken C. Masingill', 'Kenneth C. Masingill', 'Shirley A. Snyder']","['Ken C. Masingill', 'Shirley A. Snyder', 'Co-Trustees', 'the K Masingill & S Snyder Revocable Trust']"
+17,3123411_688135.txt,"
+Answer: Michael Roman and Kimberly Roman, a married couple","
+Grantee: Abhinav Jain and Hairnanti Mazumdar, husband and wife","['Michael Roman', 'Kimberly Roman']","['Abhinav Jain', 'Hairnanti Mazumdar']"
+18,3123417_688142.txt,"Grantor: AMERICAN LEGEND HOMES, LLC, a Texas limited liability company","
+Answer: RAVIKANTH JANAKIRAM GUDIPATI and SAGARI RYALI, husband and wife",['LLC'],"['RAVIKANTH JANAKIRAM GUDIPATI', 'SAGARI']"
+19,3123422_688139.txt,"
+Grantor: Nga Ting Chang and Jerrel Mills","
+Grantee: Megan Short Hanson and Tory Hanson, wife and husband","['Nga Ting Chang', 'Jerrel Mills']","['Megan Short Hanson', 'Tory Hanson']"

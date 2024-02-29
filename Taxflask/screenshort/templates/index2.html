@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Image within iFrame</title>
+</head>
+<body>
+    <input type="text" id="urlInput" placeholder="Enter URL">
+    <input type="text" id="x1" placeholder="x1">
+    <input type="text" id="y1" placeholder="y1">
+    <input type="text" id="x2" placeholder="x2">
+    <input type="text" id="y2" placeholder="y2">
+    <button onclick="cropImage()">Crop Image</button>
+    <iframe id="myFrame"></iframe>
+
+    <script>
+        function cropImage() {
+            var url = document.getElementById('urlInput').value;
+            var x1 = document.getElementById('x1').value;
+            var y1 = document.getElementById('y1').value;
+            var x2 = document.getElementById('x2').value;
+            var y2 = document.getElementById('y2').value;
+
+            var iframe = document.getElementById('myFrame');
+            iframe.src = url;
+
+            // Wait for iframe to load
+            iframe.onload = function() {
+                // Send the coordinates to the backend
+                fetch('/crop', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ url: url, x1: x1, y1: y1, x2: x2, y2: y2 })
+                })
+                .then(response => {
+                    // Handle the response from the backend
+                    // You can display the cropped image here or handle accordingly
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            };
+        }
+    </script>
+</body>
+</html>

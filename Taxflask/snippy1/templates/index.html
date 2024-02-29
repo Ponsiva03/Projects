@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Screenshot App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let startX, startY, endX, endY;
+
+            $('#loadButton').click(function () {
+                var url = $('#url').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/load_webpage',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ url: url }),
+                    success: function () {
+                        alert('Webpage loaded!');
+                    },
+                    error: function () {
+                        alert('Error loading webpage!');
+                    }
+                });
+            });
+
+            $('#snipButton').click(function () {
+                if (startX === undefined || startY === undefined || endX === undefined || endY === undefined) {
+                    alert('Please select an area to capture.');
+                } else {
+                    var snipData = { x1: startX, y1: startY, x2: endX, y2: endY };
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/take_screenshot',
+                        contentType: 'application/json',
+                        data: JSON.stringify(snipData),
+                        success: function () {
+                            alert('Screenshot captured!');
+                        },
+                        error: function () {
+                            alert('Error capturing screenshot!');
+                        }
+                    });
+                }
+            });
+
+            $('#saveButton').click(function () {
+                var sku = $('#sku').val();
+                var url = $('#url').val();
+                var screenshotPath = $('#screenshotPath').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/save_data',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ sku: sku, url: url, screenshot_path: screenshotPath }),
+                    success: function (response) {
+                        alert(response.message);
+                    },
+                    error: function () {
+                        alert('Error saving data!');
+                    }
+                });
+            });
+
+            // Mouse event handlers for selecting the area
+            $(document).on('mousedown', function (e) {
+                startX = e.pageX;
+                startY = e.pageY;
+            });
+
+            $(document).on('mouseup', function (e) {
+                endX = e.pageX;
+                endY = e.pageY;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Screenshot App</h1>
+    <label for="sku">Enter SKU:</label>
+    <input type="text" id="sku"><br><br>
+    <label for="url">Enter URL:</label>
+    <input type="text" id="url"><br><br>
+    <button id="loadButton">Load Webpage</button><br><br>
+    <button id="snipButton">Take Snip</button><br><br>
+    <input type="hidden" id="screenshotPath">
+    <button id="saveButton">Save Data</button>
+</body>
+
+</html>

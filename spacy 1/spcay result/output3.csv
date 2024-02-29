@@ -1,0 +1,37 @@
+Unnamed: 0,File Name,Grantor,Grantee,Grantor_Entities,Grantee_Entities
+0,3001948_591297.txt,"
+The Grantor in this text is MORTGAGE ELECTRONIC REGISTRATION SYSTEMS, INC. AS BENEFICIARY, AS NOMINEE FOR UNION HOME MORTGAGE CORP ITS SUCCESSORS AND/OR ASSIGNS.","
+
+The Grantee in this text is: NATIONSTAR MORTGAGE LLC DBA MR. COOPER","['AS BENEFICIARY', 'AS NOMINEE FOR UNION HOME MORTGAGE CORP ITS SUCCESSORS']",['NATIONSTAR MORTGAGE LLC DBA']
+1,3001948_591300.txt,"
+Grantor: MORTGAGE ELECTRONIC REGISTRATION SYSTEMS, INC. AS BENEFICIARY, AS NOMINEE FOR LENNAR MORTGAGE, LLC FKA EAGLE HOME MORTGAGE, LLC ITS SUCCESSORS AND/OR ASSIGNS"," 
+
+Grantee: James Rodriguez and Brittany Shawn Shocklee","['AS BENEFICIARY', 'AS NOMINEE FOR LENNAR MORTGAGE', 'LLC FKA EAGLE HOME MORTGAGE,', 'LLC ITS SUCCESSORS AND/OR']","['James Rodriguez', 'Brittany Shawn Shocklee']"
+2,3001950_590947.txt, Grantor: Thien Tam Tran,Grantee: Spectrum Credit Union,['Thien Tam Tran'],['Spectrum Credit Union']
+3,3002301_592030.txt,"
+Grantor: TSHH, LLC, a Texas limited liability company","
+Raymond Soliman",['LLC'],['Raymond Soliman']
+4,3002303_592460.txt,"
+Answer: First United Bank & Trust Company","
+Answer: First United Bank & Trust Company",['First United Bank & Trust Company'],['First United Bank & Trust Company']
+5,3002303_592461.txt,Grantor: First United Bank and Trust Company,"
+Grantee: First United Bank and Trust Company","['First United Bank', 'Trust Company']","['First United Bank', 'Trust Company']"
+6,3002303_592462.txt,"
+Grantor: Mortgage Electronic Registration Systems, Inc. (solely as nominee for First United Bank & Trust Company)"," 
+Grantee: First United Bank & Trust Company",['First United Bank & Trust Company'],['First United Bank & Trust Company']
+7,3011736_597316.txt,"
+Grantor: HIGHLAND HOMES DALLAS, LLC",Grantee: SNIGDHA REDDY KOTA and VINAY JAYARAM.,['LLC'],['VINAY JAYARAM']
+8,3011736_597318.txt,"
+Grantor: High mi Homes -— Dallas, LLC, a Texas limited liability company","
+Grantee: High mi Homes -— Dalias, LLC, a Texas limited liability company",['LLC'],"['Dalias, LLC']"
+9,3011739_597357.txt,"
+Grantor: Valeria R. Ode and Juan Jose Venica","
+Grantee: Mortgage Electronic Registration Systems, Inc. (""MERS""), as Beneficiary, As Nominee for Athas Capital Group, Inc., its Successors and Assigns","['Valeria R. Ode', 'Juan Jose Venica']","['Athas Capital Group, Inc.']"
+10,3011741_597359.txt,Grantor: Minter Homes LLC,"
+Minter Homes LLC",['Minter Homes LLC'],['Minter Homes LLC']
+11,3011745_597349.txt,Grantor,Grantee: Lucretia Morris and James Ryan Morris,[],"['Lucretia Morris', 'James Ryan Morris']"
+12,3011762_598499.txt,Answer: Mitchell Taylor,Grantee: Debra A. Miller,['Mitchell Taylor'],['Debra A. Miller']
+13,3011762_598504.txt,Grantor: Methodist Health System d/b/a Methodist Richardson Medical Center (Bush Renner),Grantee: Methodist Health System d/b/a METHODIST RICHARDSON MEDICAL CENTER (BUSH RENNER),"['Methodist Health System d/b', 'Methodist Richardson Medical Center', 'Bush Renner']",['BUSH']
+14,3011780_597420.txt,"
+Grantor: Olga Webster","
+Answer: Jeffrey Webster",['Olga Webster'],['Jeffrey Webster']

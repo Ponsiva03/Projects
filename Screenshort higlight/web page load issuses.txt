@@ -1,0 +1,25 @@
+web page load issuses
+
+https://stackoverflow.com/questions/6663244/cant-show-some-websites-in-iframe-tag
+
+
+
+directly highlighting content in an iframe from the parent page due to security restrictions imposed by the Same-Origin Policy (SOP).
+
+it's not possible for your webpage to directly modify the content of another website hosted within an iframe due to security restrictions. This is called the Same-Origin Policy (SOP) and prevents potential malicious scripts from accessing 
+and manipulating data across different domains
+
+If you have control over the website being displayed in the iframe, you could potentially implement highlighting functionality directly within that website's code.
+ This would involve JavaScript and CSS adjustments to target specific text based on user interaction or pre-defined parameters
+
+highlighting text directly within an external iframe hosted on another domain is not feasible due to security restrictions. 
+
+It's important to note that attempting to bypass security measures, such as cross-origin restrictions, X-Frame-Options, or Content Security Policy, can lead to security vulnerabilities and may violate the terms of service of the website in question.
+ Bypassing these security measures without proper authorization is considered unethical and could have legal consequences.
+
+
+-------------------------------------------------------------------------------------------------
+
+use for highlight
+
+ PDF.js libraries 

@@ -1,0 +1,60 @@
+body {
+    background-color: #cc9f66;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.map-input-data-container {
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #cc9f66;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.alert-success {
+    background-color: #d4edda;  /* Green background for success */
+    color: #155724;  /* Dark green text color for success */
+}
+
+.alert-danger {
+    background-color: #f8d7da;  /* Red background for error */
+    color: #721c24;  /* Dark red text color for error */
+}
+
+.closebtn {
+    cursor: pointer;
+}
+
+.load-button {
+    margin-top: 10px;
+}
+
+.input-section {
+    text-align: center;
+}
+
+.input {
+    margin-left: 20px;
+}
+
+.download-section {
+    text-align: center;
+    padding-left: 550px;
+    margin-top: 49px;
+}
+
+.alert {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    margin-top: 20px;
+    z-index: 1000;
+    background: darkseagreen;
+}

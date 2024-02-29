@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SKU and URL Load</title>
+    <style>
+        #screen{
+            width: 12%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="screen">
+    <h2>Enter SKU and URL</h2>
+    <form method="POST" action="/load_url">
+        <label for="sku">SKU:</label><br>
+        <input type="text" id="sku" name="sku"><br>
+        <label for="web_url">URL:</label><br>
+        <input type="text" id="web_url" name="web_url"><br><br>
+        <button type="submit">Load</button> <button type="submit">snip</button>
+
+    </form>
+    </div>
+    <iframe id="iframe" src="{{ web_url }}" width="920" height="600" style="margin-left: 10%;margin-bottom: 20%;"></iframe>
+
+
+</body>
+</html>

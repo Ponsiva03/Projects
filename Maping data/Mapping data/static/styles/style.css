@@ -1,0 +1,73 @@
+
+
+body {
+    background-color: #cc9f66;
+    font-family: sans-serif;
+}
+
+.map-input-data-container {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #cc9f66;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+  
+    height: 100vh;
+    margin: 0;
+}
+
+.map-input-data-container {
+    width: 400px;
+    
+}
+
+
+
+.alert-success {
+    background-color: #d4edda;  /* Green background for success */
+    color: #155724;  /* Dark green text color for success */
+}
+
+.alert-danger {
+    background-color: #f8d7da;  /* Red background for error */
+    color: #721c24;  /* Dark red text color for error */
+}
+
+.closebtn {
+    cursor: pointer;
+}
+
+.load-button {
+    margin-top: 10px;
+}
+
+.input{
+    margin-left: 20px;
+}
+
+.input-section{
+    text-align: center;
+    margin-top: 200px ;
+}
+
+.download-section {
+    text-align: center;
+    /* margin-right: -56px; */
+    /* margin-right: -47px; */
+    padding-left: 550px;
+    margin-top: 49px;
+}
+
+.alert {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    margin-top: 20px;
+    z-index: 1000;
+    background: darkseagreen;
+}

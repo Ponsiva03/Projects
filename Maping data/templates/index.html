@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Input Data</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style .css') }}">
+
+</head>
+<body>
+   
+   
+    <div class="map-input-data-container">
+        <h1>Map Input Data</h1>
+        
+
+        <div class="input-section">
+            {% if error %}
+                <p class="error-message">{{ error }}</p>
+            {% endif %}
+
+            <label for="input-file-path">Select the input data file path...</label>
+            <input type="file" id="input-file-path" accept=".xlsx, .xls">
+            <button class="load-button">LOAD</button>
+        </div>
+    ds
+
+        <div class="download-section">
+            <a href="#">Download Template</a>
+        </div>
+    </div>
+</body>
+</html>

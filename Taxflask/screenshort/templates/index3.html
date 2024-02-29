@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Cropping with Scraped Content</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+</head>
+<body>
+  <h1>Iframe Cropping</h1>
+  <input type="url" id="target-url" placeholder="Enter webpage URL">
+  <button id="load-url" onclick="loadIframe()">Load webpage</button>
+  <iframe id="target-iframe" style="width: 100%; height: 600px;"></iframe>
+  <div id="selection-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2); z-index: 100; display: none;"></div>
+  <button id="crop-button" disabled>Crop Selection</button>
+  <div id="cropped-content"></div>
+
+  <script>
+    let dragStartX = 0;
+    let dragStartY = 0;
+    let targetWidth = 0;
+    let targetHeight = 0;
+    let targetUrl = ""; // Store entered URL
+    let iframeContent = ""; // Store iframe content for error handling
+
+    function loadIframe() {
+      targetUrl = $('#target-url').val();
+      if (!targetUrl) {
+        alert("Please enter a valid URL!");
+        return;
+      }
+      $('#target-iframe').attr('src', ''); // Clear previous iframe content
+      $('#target-iframe').show(); // Show iframe after loading
+      $('#crop-button').prop('disabled', true); // Disable crop button initially
+      // Send URL to backend to fetch and scrape content
+      $.ajax({
+        url: "/scrape",
+        method: "POST",
+        data: {
+          url: targetUrl,
+        },
+        success: function (response) {
+          if (response.error) {
+            $('#cropped-content').text(response.error);
+            return;
+          }
+          // Update iframe content with scraped HTML
+          iframeContent = response.html;
+          $('#target-iframe').attr('src', "data:text/html;charset=utf-8," + encodeURIComponent(iframeContent));
+          // Enable crop button once content is loaded
+          $('#crop-button').prop('disabled', false);
+        },
+        error: function (error) {
+          console.error(error);
+          $('#cropped-content').text("Error: Loading content failed!");
+        },
+      });
+    }
+
+    // Implement drag and drop selection functionality using interact.js:
+    interact('#target-iframe')
+      .draggable({
+        onstart: function (event) {
+          dragStartX = event.pageX;
+          dragStartY = event.pageY;
+          targetWidth = event.target.offsetWidth;
+          targetHeight = event.target.offsetHeight;
+          $('#selection-overlay').css({
+            display: "block",
+            top: `${event.target.offsetTop}px`,
+            left: `${event.target.offsetLeft}px`,
+            width: `${event.target.offsetWidth}px`,
+            height: `${event.target.offsetHeight}px`
+          });
+        },
+        onmove: function (event) {
+          const dx = event.pageX - dragStartX;
+          const dy = event.pageY - dragStartY;
+          $('#selection-overlay').css({
+            top: `${event.target.offsetTop + dy}px`,
+            left: `${event.target.offsetLeft + dx}px`,
+            width: `${targetWidth - dx}px`,
+            height: `${targetHeight - dy}px`
+          });
+        },
+        onend: function (event) {
+          const dx = event.pageX - dragStartX;
+          const dy = event.pageY - dragStartY;
+          const left = event.target.offsetLeft + dx;
+          const top = event.target.offsetTop + dy;
+          const width = targetWidth - dx;
+          const height = targetHeight - dy;
+          // Send selection data to server via AJAX
+          $.ajax({
+            url: "/crop",
+            method: "POST",
+            data: {
+              url: targetUrl,
+              iframeContent: iframeContent, // Send entire iframe content for server-side image extraction
+              left,
+              top,
+              width,
+              height,
+            },
+            success: function (response) {
+              if (response.error) {
+                $('#cropped-content').text(response.error);
+                return;
+              }
+              // Replace iframe with cropped content received from server
+              $('#target-iframe').attr('src', response.imageUrl);
+              // Display any additional info from server response
+              $('#cropped-content').html(response.message);
+              // Hide selection overlay
+              $('#selection-overlay').css('display', 'none');
+            },
+            error: function (error) {
+              console.error(error);
+              $('#cropped-content').text("Error: Cropping failed!");
+            },
+          });
+        },
+      });
+
+    // Handle click on crop button
+    $('#crop-button').click(function () {
+      // Trigger iframe drag to capture final selection
+      $('#target-iframe').trigger('mousedown');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+ID,Team_name,Player_ID,Player_name,Player_role
+1,PAK,1,"Babar Azam",Batsman
+2,PAK,2,Imam-ul-Haq,"Opening Batsman"
+3,PAK,3,"Fakhar Zaman","Opening Batsman"
+4,PAK,4,"Mohammad Rizwan",Batsman/Wicket-keeper
+5,PAK,5,"Shoaib Malik",All-rounder
+6,PAK,6,"Asif Ali",All-rounder
+7,PAK,7,"Shaheen Afridi","Fast Bowler"
+8,PAK,8,"Hasan Ali","Fast Bowler"
+9,PAK,9,"Haris Rauf","Fast Bowler"
+10,PAK,10,"Shadab Khan","Spin Bowler/All-rounder"
+11,PAK,11,"Imad Wasim","Spin Bowler/All-rounder"
+12,IND,1,"Rohit Sharma","Opening Batsman"
+13,IND,2,"Shikhar Dhawan","Opening Batsman"
+14,IND,3,"Virat Kohli",Batsman
+15,IND,4,"KL Rahul",Batsman/Wicket-keeper
+16,IND,5,"Hardik Pandya",All-rounder
+17,IND,6,"Ravindra Jadeja",All-rounder
+18,IND,7,"Bhuvneshwar Kumar","Fast Bowler"
+19,IND,8,"Jasprit Bumrah","Fast Bowler"
+20,IND,9,"Mohammed Shami","Fast Bowler"
+21,IND,10,"Yuzvendra Chahal","Spin Bowler"
+22,IND,11,"Kuldeep Yadav","Spin Bowler"
+23,AUS,1,"Aaron Finch","Opening Batsman"
+24,AUS,2,"David Warner","Opening Batsman"
+25,AUS,3,"Steve Smith",Batsman
+26,AUS,4,"Glenn Maxwell",All-rounder
+27,AUS,5,"Marcus Stoinis",All-rounder
+28,AUS,6,"Matthew Wade",Batsman/Wicket-keeper
+29,AUS,7,"Pat Cummins","Fast Bowler"
+30,AUS,8,"Mitchell Starc","Fast Bowler"
+31,AUS,9,"Josh Hazlewood","Fast Bowler"
+32,AUS,10,"Adam Zampa","Spin Bowler"
+33,AUS,11,"Ashton Agar","Spin Bowler/All-rounder"
+34,ENG,1,"Eoin Morgan",Batsman
+35,ENG,2,"Jason Roy","Opening Batsman"
+36,ENG,3,"Jonny Bairstow","Opening Batsman/Wicket-keeper"
+37,ENG,4,"Joe Root",Batsman
+38,ENG,5,"Jos Buttler",Batsman/Wicket-keeper
+39,ENG,6,"Ben Stokes",All-rounder
+40,ENG,7,"Moeen Ali",All-rounder
+41,ENG,8,"Jofra Archer","Fast Bowler"
+42,ENG,9,"Mark Wood","Fast Bowler"
+43,ENG,10,"Adil Rashid","Spin Bowler"
+44,ENG,11,"Chris Woakes",All-rounder
+45,NZ,1,"Kane Williamson",Batsman
+46,NZ,2,"Martin Guptill","Opening Batsman"
+47,NZ,3,"Devon Conway","Opening Batsman/Wicket-keeper"
+48,NZ,4,"Ross Taylor",Batsman
+49,NZ,5,"Tom Latham",Batsman/Wicket-keeper
+50,NZ,6,"James Neesham",All-rounder
+51,NZ,7,"Mitchell Santner",All-rounder
+52,NZ,8,"Tim Southee","Fast Bowler"
+53,NZ,9,"Trent Boult","Fast Bowler"
+54,NZ,10,"Lockie Ferguson","Fast Bowler"
+55,NZ,11,"Ish Sodhi","Spin Bowler"

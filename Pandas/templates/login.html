@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab {
+            display: flex;
+        }
+        .tab button {
+            flex: 1;
+            margin: 1px;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function openForm(tabName) {
+            var i;
+            var x = document.getElementsByClassName("form");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="tab">
+                <button onclick="openForm('Login')">Login</button>
+                <button onclick="openForm('Signup')">Sign Up</button>
+            </div>
+            <div id="Login" class="form">
+                <h2>Login</h2>
+                <form action="/login" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div id="Signup" class="form" style="display:none;">
+                <h2>Sign Up</h2>
+                <form action="/signup" method="post">
+                    <input type="text" name="new_username" placeholder="Username" required>
+                    <input type="password" name="new_password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

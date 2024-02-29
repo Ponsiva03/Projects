@@ -1,0 +1,11 @@
+AppointmentID,AppointmentDate,AppointmentTime,DoctorID,PatientID,BranchID,Reason,Status,MedicalNotes,BillingAmount,Prescription,LabResults
+1,2023-08-15,10:00:00,1,1,1,"Routine Checkup",Confirmed,"No specific issues noted.",100.00,None,"No lab results available."
+2,2023-08-20,14:30:00,2,2,2,"Pediatric Consultation",Confirmed,"Patient has a mild fever.",75.50,"Prescribed antibiotics.","No lab results available."
+3,2023-09-05,11:15:00,3,3,3,"Dermatology Consultation",Confirmed,"Patient has a skin rash.",85.00,"Prescribed topical cream.","No lab results available."
+4,2023-09-10,09:30:00,4,4,1,"Cardiology Checkup",Confirmed,"Patient reports occasional chest pain.",120.75,"Prescribed medication.","No lab results available."
+5,2023-09-20,16:45:00,5,5,2,"Neurology Consultation",Confirmed,"Patient experiences frequent headaches.",90.25,"Recommended MRI scan.","MRI results indicate no abnormalities."
+6,2023-09-25,14:00:00,6,6,3,"Orthopedic Consultation",Confirmed,"Patient reports knee pain.",95.50,"Prescribed physical therapy.","X-ray results show mild arthritis."
+7,2023-10-05,10:30:00,7,7,1,"Gynecological Checkup",Confirmed,"Routine checkup for women.",110.00,"No prescription needed.","Pap smear results are normal."
+8,2023-10-15,15:15:00,8,8,2,"Urology Consultation",Confirmed,"Patient experiences urinary tract discomfort.",85.75,"Prescribed antibiotics.","No lab results available."
+9,2023-11-02,11:45:00,9,9,3,"Ophthalmology Checkup",Confirmed,"Routine eye examination.",70.25,"No prescription needed.","Vision test results are normal."
+10,2023-11-15,17:00:00,10,10,1,"Psychiatry Consultation",Confirmed,"Patient reports anxiety and stress.",120.00,"Prescribed anti-anxiety medication.","No lab results available."

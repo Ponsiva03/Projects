@@ -1,0 +1,18 @@
+/* Sample styles for maintaining layout in the PDF */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+h2 {
+    color: blue;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.highlighted {
+    background-color: yellow;
+}

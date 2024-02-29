@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: azure;">
+    <h2>Saved Data</h2>
+    <form action="/delete" method="post">
+        <ul>
+            {% for index, row in data.iterrows() %}
+            <li>
+                <input type="checkbox" name="delete_item" value="{{ row['Name'] }}">
+                {{ row['Name'] }} - {{ row['Details'] }}
+            </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Delete Selected</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.header{
+		background-color: #004953; /* Green */
+		padding: 5px 5px;
+		color: white;
+		text-align: center;
+		text-decoration: none;
+		font-size: 18px;
+		height: 80px;
+	}
+	body{
+		background-color: Silver;
+	}
+	.page_one{
+  		text-align: center;
+  		font-size: 20px;
+	}
+	button {
+		background-color: #034694; /* Green */
+		border: none;
+		color: white;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+	}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute Mapping</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript">
+  		function copy() {
+		  let textarea = document.getElementById("textarea");
+		  textarea.select();
+		  document.execCommand("copy");
+		}
+
+		$(document).ready(function(){
+			$('#inputsel').on('change',function(){
+				if($('#inputsel').val() == 'URL'){
+					$('#inputtype').attr('style','display:block');
+				}
+				else{
+					$('#inputtype').attr('style','display:none');
+				}
+				$('#txtUrl').val('');		
+			})
+
+			$('#btnUrl').on('click',function(){
+				$.ajax({
+					url:"/fetch_from_url",
+					method:"POST",
+					data:JSON.stringify({'fetchUrl':$('#txtUrl').val()}),
+					contentType: "application/json",
+					dataType:'json',
+				}).done(function(response){
+					var frmSearch_data = $("#search_data").contents().find('body'); 
+        			frmSearch_data.html(response.fetchValue); 
+
+        			$("#search_data").contents().find('body').mouseup(function(){
+        				var iframe = document.getElementById("search_data");
+        				var seltxt = getIframeSelectionText(iframe);
+
+        				$('#txtSelText').val(seltxt);
+						window.getSelection().empty();
+						var $options = $("#lstSchema > option").clone();
+						$('#selSchema').append($options);
+
+						$.ajax({
+							url:"/gpt_sugg",
+							method:"POST",
+							data:JSON.stringify({'selText':$('#txtSelText').val()}),
+							contentType: "application/json",
+							dataType:'json',
+						}).done(function(response){
+							$('#gptSchema').val(response.result);
+						}).fail(function(error){
+							alert('Error while fetching GPT suggested Schema : ' + error.responseText);
+						});
+
+						$('#mapModal').modal('show');
+			            //alert('Click detected inside iframe : ' + txt);
+			        });
+					//$('#search_data').val(response.fetchValue);
+				}).fail(function(error){
+					//var err = eval("(" + xhr.responseText + ")");
+					alert('Unable to fetch from URL : ' + error.responseText);
+				});
+			})
+
+			$('#btnMapSchema').on('click',function(){
+				$.ajax({
+					url:"/fetched_info",
+					method:"POST",
+					data:JSON.stringify({'endNode':$('#c_name').val(),'fetchUrl':$('#txtUrl').val(),'selText':$('#txtSelText').val(),'selSchema':$("#selSchema option:selected").text()}),
+					contentType: "application/json",
+					dataType:'json',
+				}).done(function(response){
+					alert('Schema mapping done successfully');
+				}).fail(function(error){
+					//var err = eval("(" + xhr.responseText + ")");
+					alert('Error : ' + error.responseText);
+				});
+			})
+
+
+			function getIframeSelectionText(iframe) {
+
+				var win= iframe.contentWindow || iframe.contentDocument.defaultView;
+				var doc= iframe.contentDocument || win.document || iframe.contentWindow.document;
+
+
+				  if (win.getSelection) {
+				    return win.getSelection().toString();
+				  } 
+				  else if (doc.selection && doc.selection.createRange) {
+				    return doc.selection.createRange().text;
+				  }
+				  else if (doc.selection) {
+				    return doc.selection.createRange().text;
+				  }
+				  else
+				  {
+				  alert('Error in rendering');
+				  }
+			}
+		});
+  	</script>
+</head>
+
+<body>
+<div class="header">
+	<img src="static\logo.png" height="80px" style="float:left;margin-left:-10px;margin-top:-5px;">	
+   <h2><center>Welcome to Attribute Mapping Application ( Manually ) </center></h2>
+</div>
+<br>
+<div class="container-fluid">
+   	<div class="row">
+   		<div class="col-sm-4" style="text-align:left;">
+			<form action = "/select_column" method = "POST" enctype="multipart/form-data"> 
+			<input type="hidden" id="colname" name="colname" value="{{cl_name}}">
+			   <label for="c_name">Select End Node : </label>
+			   <select name="c_name" id="c_name" style="width:250px" class="form-control" required>
+			   {%for i in cl_name%}
+					<option value="{{i}}" {% if request.form['c_name'] == i %} selected {% endif %}>{{i}}</option>
+			   {%endfor%}
+			   </select>
+				  
+			  <br>
+			  <input type="submit" class="btn btn-md btn-primary" value="Proceed">
+			  <br><br>
+			</form>
+
+			<p><b>Taxonomy : </b></p>
+			<center>
+			<div class="form-control" style="width:400px;height:100px;text-align:left;border:1px solid black;overflow:scroll;">
+				{{match_tax}}
+			</div>
+			</center>
+
+			<p><b>Schema : </b></p>
+			<center>
+			<div class="form-control" style="width:400px;height:100px;text-align:left;border:1px solid black;overflow:scroll;">
+				{%for i in attr_list%}
+					{{i}}<br/>	
+				{%endfor%}
+			</div>
+			<select name="lstSchema" id="lstSchema" style="width:250px;display:none" class="form-control">
+				{%for i in attr_list%}
+					<option value={{i}}>{{i}}</option>	
+				{%endfor%}
+			</select>
+			</center>
+			<br/><br/>
+			<form action = "/map_value" method = "POST" >
+				<center>
+					{% if col_name %}
+					<table>
+						<tr>
+							<td>
+								<label for="inputsel">Select Input Type : </label>
+							</td>
+							<td>
+								<select name="inputsel" id="inputsel" style="width:250px" class="form-control" required>
+									<option>SELECT</option>
+									<option value="URL">Web URL</option>
+									<option value="Text Input">Text Input</option>
+								</select>
+							</td>
+						</tr>				
+					</table>			
+					<div id="inputtype" name="inputtype" style="display:none;">
+						<br/>
+						<table>
+							<tr>
+								<td>
+									<span><b>Input URL : </b></span>
+								</td>
+								<td>
+									<input type="text" id="txtUrl" name="txtUrl" style="width:300px">
+								</td>
+							</tr>
+						</table><br/>
+						<input type="button" id="btnUrl" name="btnUrl" class="btn btn-sm btn-primary" value="Get Data">
+					</div>
+					{% endif %}
+				</center>
+			</form>
+		</div>
+		<div class="col-sm-4" style="text-align:center;">
+			<form action = "/map_value" method = "POST" >
+			<input type="hidden" id="c_name" name="c_name" value="{{col_name}}">
+			{% if col_name %}
+			<div id="txtInfo" name="txtInfo">
+				<p><b>Input Raw Data : </b></p>
+				{% if search_value %}
+					<div id="raw_data" name="raw_data" style='border:1px solid black;width:400px;height:70vh;overflow:scroll;'>
+					{% set txtValues = search_value.split(' ') %}
+					{% set strRes = result_value|join(' ')|replace("['"," ")|replace("']"," ")|replace(":"," ") %}
+					{% set findValues = [] %}
+					{% for txtVal in txtValues %}						
+						{% if txtVal.strip().lower() in strRes.lower() and txtVal.strip().lower() not in findValues %}
+							<span style="background-color:#004687;color:white">{{txtVal}}</span>&nbsp;
+							<span hidden>{{ findValues.append(txtVal.strip().lower()) }}</span>
+						{% else %}
+							<span style="color:black">{{txtVal}}</span>&nbsp;
+						{% endif %}
+					{% endfor%}	
+					</div>
+				{% else %}
+					<!--<textarea id="search_data" name="search_data" style="width:800px;height:90vh"></textarea>-->
+					<iframe id="search_data" name="search_data" style="width:800px;height:90vh"></iframe>
+					<br/>
+					<!--<input type="submit" class="btn btn-md btn-primary" value="Extract">-->
+				{% endif %}
+			</div>
+			{% endif %}
+			</form>
+		</div>
+		{% if col_name %}
+		<div class="col-sm-4" style="text-align:center;">
+			{% if result_key %}
+			<form action = "/final_output" method = "POST" >
+				<input type="hidden" id="c_name" name="c_name" value="{{col_name}}">
+				<input type="hidden" id="s_value" name="s_value" value="{{search_value}}">
+				<p><b>Output Data : </b></p>
+				<center>
+				<div class="form-control" style="width:400px;height:70vh;text-align:left;border:1px solid black;overflow:scroll;">
+					{%for i in range(result_key|length)%}
+						{{result_key[i]}} : {{result_value[i]}}<br/>
+					{%endfor%}
+				</div>
+				</center>
+				<br/>
+				<!-- <input type="submit" class="btn btn-md btn-primary" value="Copy"> -->
+			</form>
+			{% endif %}
+
+
+		</div>
+		{% endif %}
+	</div>
+	<div class="modal fade" id="mapModal" role="dialog">
+	    <div class="modal-dialog">
+   	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Map Schema</h4>
+	        </div>
+	        <div class="modal-body">
+	          <div class="form-group">
+			    <label for="txtSelText">Selected Text:</label>
+			    <input type="text" class="form-control" id="txtSelText">
+			  </div>
+			  <div class="form-group">
+			    <label for="selSchema">Schema:</label>
+			    <select name="selSchema" id="selSchema" style="width:250px" class="form-control" required>
+				</select>				
+			  </div>
+			  <div class="form-group">
+			    <label for="gptSchema">GPT Schema:</label>
+			    <input type="text" class="form-control" name="gptSchema" id="gptSchema" readonly>
+			  </div>
+			  <br>
+			  <input type="submit" name="btnMapSchema" id="btnMapSchema" class="btn btn-md btn-primary" value="Submit">
+	        </div>
+	      </div>	      
+	    </div>
+	</div>
+</div>
+</body>
+</html>

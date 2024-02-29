@@ -1,0 +1,13 @@
+incase the sku id  has the three urls like one web url and 2 .pdfsurls
+
+
+ the gemini api  first want look  the  first url and exratct the attributes value   
+for example:
+the schema has 20 attributes on that in first url 
+only get the 10 attributes values balance are empty or fill with n/a then move to second url extract the balance attributes values  in that second url  in balance 10 attributes we get the 3 attributes values then move to  thrid url find and  extract balance attributes values incase in thrid url only we get  1 attributes values    there issues give final  file 
+
+
+ attr_name.xlsx 
+
+817NK0	7,100,315,929	Sanding Belts	https://www.3m.com/3M/en_US/p/d/b5005459009/		https://multimedia.3m.com/mws/mediawebserver?mwsId=SSSSSuUn_zu8l00xNx2S4YtZNv70k17zHvu9lxtD7SSSSSS--	1	https://multimedia.3m.com/mws/media/2334253O/3m-cubitron-3-cloth-belt-1184f-brochure-digital-version.pdf?&fn=3m-cubitron-3-cloth-belt-1184f-brochure-digital-verson.pdf	4				
+ 

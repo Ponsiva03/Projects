@@ -1,0 +1,50 @@
+Write a flask html page,
+user choose the pdf file from local  , then proceed, 
+Show it within the same page
+Once this is done, create one text box with some text , can be static also. And the web url data fetching is done, select any word from the static text box and that word needs to be highlighted on the web page which has been fetched
+
+
+
+-----------------------------------------------------------------------------------------------------
+
+Create a text box with some text in it. It can be static as well. The user can choose any word from the static text box using mouse, and it must be highlighted on the HTML page that is displayed in the iframe.
+
+
+Then the user creates a static text box with some text in it and user wants to select any word in it. that word will be highlighted  on the loaded  HTML page in the iframe
+
+-----------------------------------------------------------------------------------------------------
+Write a flask html code 
+
+when user give the input as html link that will  be converted into pdf with same content with design then
+
+that pdf will  Show it within the same page then the user creates a static text box with some text in it and user wants to select any word in it.
+that word will be highlighted  on the loaded  pdf file
+
+
+
+
+
+
+
+
+
+I have one idea: the user should give the html link as input so that the html page can be converted into a pdf file with the same content and design. Then, when the user selects a word from  static text in front end, that  word will be highlighted on that pdf, and after the highlighted pdf is displayed on the i frame 
+in backend use pymupdf  package to highlight after highlighting the text only it will display in iframe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+MFE 40 (604040510) WALL CHASER
+(220-240 V / 50 - 60 HZ); PLASTIC CARRY CASE

@@ -1,0 +1,45 @@
+[
+  {
+    "SKU ID": "817LM5",         this SKU ID and MPN default
+    "MPN": "LW1017ERSM1",
+
+
+
+
+    "URL": "https://www.lg.com/us/air-conditioners/lg-lw1017ersm1-window-air-conditioner",
+    "Original ATTR Name": "Air Flow Direction",
+    "Refered ATTR Name": "NA",
+    "ATTR Value": "NA",
+    "UOM": "NA",
+    "LOCAL URL": "file:///C:/python files/nivathitha code/static817LM5_0.pdf"
+  },
+  {
+    
+    "URL": "https://www.lg.com/us/air-conditioners/lg-lw1017ersm1-window-air-conditioner",
+    "Original ATTR Name": "Average Coverage Area [MERCH]",
+    "Refered ATTR Name": "NA",
+    "ATTR Value": "450 Sq. Ft.",
+    "UOM": "NA",
+    "LOCAL URL": "file:///C:/python files/nivathitha code/static817LM5_0.pdf"
+  },
+
+ {
+    
+    "URL": "https://www.lg.com/us/support/products/documents/SpecSheet_LW1017ERSM1.pdf",
+    "Original ATTR Name": "Weight",
+    "Refered ATTR Name": "Weight",
+    "ATTR Value": "57 lbs.",
+    "UOM": "lbs.",
+    "LOCAL URL": "file:///C:/python files/nivathitha code/static817LM5_1.pdf"
+  },
+
+  {
+
+    "URL": "https://www.lg.com/us/support/products/documents/SpecSheet_LW1017ERSM1.pdf",
+    "Original ATTR Name": "Width",
+    "Refered ATTR Name": "Width",
+    "ATTR Value": "19 4/7”",
+    "UOM": "in",
+    "LOCAL URL": "file:///C:/python files/nivathitha code/static817LM5_1.pdf"
+  }
+]

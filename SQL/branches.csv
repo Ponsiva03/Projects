@@ -1,0 +1,4 @@
+BranchID,BranchName,Address,City,State,ZipCode,ContactNumber,AdministratorName,AdministratorEmail,NumberOfDoctors,NumberOfNurses,TotalBeds,EmergencyContact,Website
+1,"General Hospital","123 Main Street",miami,Florida,12345,555-111-1111,"John Smith",john.smith@example.com,6,14,100,555-222-2222,http://www.generalhospital.com
+2,"City Medical Center","456 Elm Street","Los Angeles",California,67890,555-333-3333,"Jane Doe",jane.doe@example.com,7,15,120,555-444-4444,http://www.citymedicalcenter.com
+3,"Community Hospital","789 Oak Street","New York","New york",83875,555-555-5555,"Susan Johnson",susan.johnson@example.com,7,11,80,555-666-6666,http://www.communityhospital.com

@@ -1,0 +1,8 @@
+match_id,team_a,team_b,total_run_score,total_wickets_taken,match_result
+1,PAK,IND,300,5,"Team A won"
+2,AUS,ENG,250,7,"Team B won"
+3,NZ,ENG,320,4,"Team A won"
+4,IND,ENG,280,6,"Team A won"
+5,AUS,PAK,270,5,"Team B won"
+6,NZ,PAK,310,3,"Team A won"
+7,ENG,NZ,290,5,"Team A won"

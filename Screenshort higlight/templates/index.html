@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to PDF Converter</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <form id="conversionForm">
+        <label for="html_link">HTML Link:</label>
+        <input type="text" id="html_link" name="html_link" placeholder="Enter HTML link">
+
+        <label for="word">Select Word:</label>
+        <input type="text" id="word" name="word" placeholder="Select a word">
+
+        <button type="button" onclick="convertAndHighlight()">Convert and Highlight</button>
+    </form>
+    <p id="staticTextBox">WP21
+        MFE 40 (604040510) WALL CHASER
+(220-240 V / 50 - 60 HZ); PLASTIC CARRY CASE 10 - 40 mm // 3/8 - 1 9/16 "Cutting discØ: 125 mm / 5 "
+</p>
+
+    <div id="resultContainer"></div>
+    
+
+    <script>
+        function convertAndHighlight() {
+            var formData = $('#conversionForm').serialize();
+
+            $.ajax({
+                type: 'POST',
+                url: '/convert_highlight',
+                data: formData,
+                success: function(data) {
+                    // Display the result message and PDF
+                    $('#resultContainer').html('<h1>' + data.message + '</h1><h2>Highlighted PDF:</h2><iframe src="' + data.pdf_path + '" width="800" height="600"></iframe>');
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

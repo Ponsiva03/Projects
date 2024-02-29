@@ -1,0 +1,13 @@
+RoomID,RoomNumber,RoomType,BranchID,Capacity,Facilities,Availability,AdditionalNotes
+1,101,Standard,1,2,"Bathroom, TV, WiFi",1,"Adjoining room available for family."
+2,102,Standard,1,2,"Bathroom, TV, WiFi",1,"Wheelchair-accessible room."
+3,201,Deluxe,2,3,"Bathroom, TV, WiFi, Mini-Fridge",1,"Panoramic view of the city."
+4,202,Deluxe,2,3,"Bathroom, TV, WiFi, Mini-Fridge",1,"Adjoining room available for family."
+5,301,Suite,3,4,"Bathroom, TV, WiFi, Mini-Fridge, Sofa",1,"Spacious suite with a sitting area."
+6,302,Suite,3,4,"Bathroom, TV, WiFi, Mini-Fridge, Sofa",1,"Wheelchair-accessible suite."
+7,103,Standard,1,2,"Bathroom, TV, WiFi",1,"Near nursing station for better care access."
+8,104,Standard,1,2,"Bathroom, TV, WiFi",1,"Quiet corner room."
+9,202,Deluxe,2,3,"Bathroom, TV, WiFi, Mini-Fridge",1,"Adjoining room with a shared living area."
+10,203,Deluxe,2,3,"Bathroom, TV, WiFi, Mini-Fridge",1,"Suitable for families, with a separate dining area."
+11,401,Suite,3,4,"Bathroom, TV, WiFi, Mini-Fridge, Sofa",1,"VIP suite with a private balcony."
+12,402,Suite,3,4,"Bathroom, TV, WiFi, Mini-Fridge, Sofa",1,"Accessible suite with an extra-large bathroom."
